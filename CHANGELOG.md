@@ -1,5 +1,9 @@
 # Change Log
 
+## v8.1.3
+
+- Update barcodescanner to improve data matrix reader (https://github.com/beezeelinx/barcodescanner-lib-aar)
+
 ## v8.1.2
 
 - Update barcodescanner to v3.5.1 (https://github.com/simplifier-ag/barcodescanner-lib-aar/releases/download/v3.5.1/barcodescanner-release-3.5.1.aar)
