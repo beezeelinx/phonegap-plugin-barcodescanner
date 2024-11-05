@@ -54,11 +54,11 @@ public class BarcodeScanner extends CordovaPlugin {
     private static final String DISABLE_BEEP = "disableSuccessBeep";
     private static final String FORMATS = "formats";
     private static final String PROMPT = "prompt";
+    private static final String ALSO_INVERTED = "alsoInverted";
     private static final String TEXT_TYPE = "TEXT_TYPE";
     private static final String EMAIL_TYPE = "EMAIL_TYPE";
     private static final String PHONE_TYPE = "PHONE_TYPE";
     private static final String SMS_TYPE = "SMS_TYPE";
-    private static final String ALSO_INVERTED = "ALSO_INVERTED";
 
     private static final String LOG_TAG = "BarcodeScanner";
 
