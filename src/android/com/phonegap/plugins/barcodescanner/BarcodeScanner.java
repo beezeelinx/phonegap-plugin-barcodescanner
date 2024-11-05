@@ -198,6 +198,8 @@ public class BarcodeScanner extends CordovaPlugin {
 
                 }
 
+                intentScan.putExtra(DecodeHintType.ALSO_INVERTED.name(), true);
+
                 // avoid calling other phonegap apps
                 intentScan.setPackage(that.cordova.getActivity().getApplicationContext().getPackageName());
 
