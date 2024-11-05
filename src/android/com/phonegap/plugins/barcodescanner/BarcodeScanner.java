@@ -24,6 +24,7 @@ import org.apache.cordova.CallbackContext;
 import org.apache.cordova.PluginResult;
 import org.apache.cordova.PermissionHelper;
 
+import com.google.zxing.DecodeHintType;
 import com.google.zxing.client.android.CaptureActivity;
 import com.google.zxing.client.android.encode.EncodeActivity;
 import com.google.zxing.client.android.Intents;
@@ -57,6 +58,7 @@ public class BarcodeScanner extends CordovaPlugin {
     private static final String EMAIL_TYPE = "EMAIL_TYPE";
     private static final String PHONE_TYPE = "PHONE_TYPE";
     private static final String SMS_TYPE = "SMS_TYPE";
+    private static final String ALSO_INVERTED = "ALSO_INVERTED";
 
     private static final String LOG_TAG = "BarcodeScanner";
 
@@ -175,6 +177,8 @@ public class BarcodeScanner extends CordovaPlugin {
                             }
                         }
 
+                        intentScan.putExtra(DecodeHintType.ALSO_INVERTED.name(), obj.optBoolean(ALSO_INVERTED, true));
+
                         intentScan.putExtra(Intents.Scan.CAMERA_ID, obj.optBoolean(PREFER_FRONTCAMERA, false) ? 1 : 0);
                         intentScan.putExtra(Intents.Scan.SHOW_FLIP_CAMERA_BUTTON, obj.optBoolean(SHOW_FLIP_CAMERA_BUTTON, false));
                         intentScan.putExtra(Intents.Scan.SHOW_TORCH_BUTTON, obj.optBoolean(SHOW_TORCH_BUTTON, false));
@@ -197,8 +201,6 @@ public class BarcodeScanner extends CordovaPlugin {
                     }
 
                 }
-
-                intentScan.putExtra(DecodeHintType.ALSO_INVERTED.name(), true);
 
                 // avoid calling other phonegap apps
                 intentScan.setPackage(that.cordova.getActivity().getApplicationContext().getPackageName());
